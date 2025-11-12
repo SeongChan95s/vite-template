@@ -4,6 +4,7 @@ import { registerSW } from 'virtual:pwa-register';
 import '@/assets/styles/base/_reset.scss';
 import '@/assets/styles/base/_typography.scss';
 import '@/assets/styles/base/_layout.scss';
+import '@/assets/styles/utils/_transition.scss';
 import '@/assets/styles/base/tailwind.css';
 import Router from './router';
 

@@ -13,3 +13,9 @@ main {
 	padding-right: var(--inner);
 	padding-left: var(--inner);
 }
+
+.layout-width {
+	min-width: var(--layout-min-width);
+	max-width: var(--layout-max-width);
+	margin: 0 auto;
+}

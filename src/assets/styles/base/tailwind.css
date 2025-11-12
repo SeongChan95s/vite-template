@@ -2,17 +2,17 @@
 
 @theme static {
 	/* color */
-	--color-primary-50: #eaf3ff;
-	--color-primary-100: #d9e8ff;
-	--color-primary-200: #bbd4ff;
-	--color-primary-300: #91b5ff;
-	--color-primary-400: #6689ff;
-	--color-primary-500: #435fff;
-	--color-primary-600: #2231ff;
-	--color-primary-700: #1722eb;
-	--color-primary-800: #1824cd;
-	--color-primary-900: #1b2594;
-	--color-primary-950: #101456;
+	--color-primary-50: #f2f2ff;
+	--color-primary-100: #e8e7ff;
+	--color-primary-200: #d4d3ff;
+	--color-primary-300: #b4afff;
+	--color-primary-400: #8e82ff;
+	--color-primary-500: #6a4fff;
+	--color-primary-600: #572bfc;
+	--color-primary-700: #4919e8;
+	--color-primary-800: #3e15c6;
+	--color-primary-900: #34139f;
+	--color-primary-950: #1c096c;
 
 	--color-gray-50: oklch(0.985 0.002 247.839);
 	--color-gray-100: oklch(0.967 0.003 264.542);
@@ -26,17 +26,22 @@
 	--color-gray-900: oklch(0.21 0.034 264.665);
 	--color-gray-950: oklch(0.13 0.028 261.692);
 
-	--color-neutral-50: oklch(0.985 0 0);
-	--color-neutral-100: oklch(0.97 0 0);
+	--color-surface-01: oklch(0.985 0 0);
+	--color-surface-02: oklch(0.97 0 0);
 	--color-neutral-200: oklch(0.922 0 0);
 	--color-neutral-300: oklch(0.87 0 0);
 	--color-neutral-400: oklch(0.708 0 0);
-	--color-neutral-500: oklch(0.556 0 0);
+	--color-surface-010: oklch(0.556 0 0);
 	--color-neutral-600: oklch(0.439 0 0);
 	--color-neutral-700: oklch(0.371 0 0);
 	--color-neutral-800: oklch(0.269 0 0);
 	--color-neutral-900: oklch(0.205 0 0);
 	--color-neutral-950: oklch(0.145 0 0);
+
+	--color-surface-01: #fafafa;
+	--color-surface-02: #f8f8f8;
+	--color-surface-03: #f6f6f6;
+	--color-surface-04: #f4f4f4;
 
 	--color-black: #000;
 	--color-white: #fff;
@@ -50,6 +55,8 @@
 	--z-fab: 50;
 
 	/* layout */
+	--spacing: 1px;
+
 	--layout-min-width: 350px;
 	--layout-max-width: 750px;
 	--inner: 0.875rem;
@@ -61,9 +68,7 @@
 	--header-layout-sm: 0.75rem;
 	--header-layout-md: 0.875rem;
 	--header-layout-lg: 1.125rem;
-}
 
-@theme {
 	/* typography */
 	--text-headline-1: 1.5rem;
 	--text-headline-1--font-weight: 700;

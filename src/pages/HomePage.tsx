@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { IconAlertFilled } from '../components/common/icons';
+import { IconAlertFilled } from '../components/common/Icon';
 
 export default function HomePage() {
 	return (
 		<>
 			<Helmet>
-				<title>홈 - 파티 스케줄러</title>
+				<title>파티 스케줄러</title>
 				<meta name="description" content="파티 일정을 쉽게 관리하세요" />
 			</Helmet>
 			<div>
@@ -22,6 +22,9 @@ export default function HomePage() {
 						</li>
 						<li>
 							<Link to="/user">User 페이지</Link>
+						</li>
+						<li>
+							<Link to="/guide/common/component">Guide 페이지</Link>
 						</li>
 						<li>
 							<Link to="/user/123">User Detail (123)</Link>

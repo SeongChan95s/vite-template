@@ -32,6 +32,106 @@
 
 ------ */
 
+// headline
+@mixin headline-1 {
+	font-size: var(--text-headline-1);
+	font-weight: var(--text-headline-1--font-weight);
+	line-height: var(--text-headline-1--line-height);
+}
+
+@mixin headline-2 {
+	font-size: var(--text-headline-2);
+	font-weight: var(--text-headline-2--font-weight);
+	line-height: var(--text-headline-2--line-height);
+}
+
+@mixin headline-3 {
+	font-size: var(--text-headline-3);
+	font-weight: var(--text-headline-3--font-weight);
+	line-height: var(--text-headline-3--line-height);
+}
+
+@mixin headline-4 {
+	font-size: var(--text-headline-4);
+	font-weight: var(--text-headline-4--font-weight);
+	line-height: var(--text-headline-4--line-height);
+}
+
+// title
+@mixin title-1 {
+	font-size: var(--text-title-1);
+	font-weight: var(--text-title-1--font-weight);
+	line-height: var(--text-title-1--line-height);
+}
+
+@mixin title-2 {
+	font-size: var(--text-title-2);
+	font-weight: var(--text-title-2--font-weight);
+	line-height: var(--text-title-2--line-height);
+}
+
+@mixin title-3 {
+	font-size: var(--text-title-3);
+	font-weight: var(--text-title-3--font-weight);
+	line-height: var(--text-title-3--line-height);
+}
+
+@mixin title-4 {
+	font-size: var(--text-title-4);
+	font-weight: var(--text-title-4--font-weight);
+	line-height: var(--text-title-4--line-height);
+}
+
+// body
+@mixin body-1 {
+	font-size: var(--text-body-1);
+	font-weight: var(--text-body-1--font-weight);
+	line-height: var(--text-body-1--line-height);
+}
+
+@mixin body-2 {
+	font-size: var(--text-body-2);
+	font-weight: var(--text-body-2--font-weight);
+	line-height: var(--text-body-2--line-height);
+}
+
+@mixin body-3 {
+	font-size: var(--text-body-3);
+	font-weight: var(--text-body-3--font-weight);
+	line-height: var(--text-body-3--line-height);
+}
+
+@mixin body-4 {
+	font-size: var(--text-body-4);
+	font-weight: var(--text-body-4--font-weight);
+	line-height: var(--text-body-4--line-height);
+}
+
+// label
+@mixin label-1 {
+	font-size: var(--text-label-1);
+	font-weight: var(--text-label-1--font-weight);
+	line-height: var(--text-label-1--line-height);
+}
+
+@mixin label-2 {
+	font-size: var(--text-label-2);
+	font-weight: var(--text-label-2--font-weight);
+	line-height: var(--text-label-2--line-height);
+}
+
+@mixin label-3 {
+	font-size: var(--text-label-3);
+	font-weight: var(--text-label-3--font-weight);
+	line-height: var(--text-label-3--line-height);
+}
+
+@mixin label-4 {
+	font-size: var(--text-label-4);
+	font-weight: var(--text-label-4--font-weight);
+	line-height: var(--text-label-4--line-height);
+}
+
 @mixin hidden {
 	position: absolute;
 	overflow: hidden;
@@ -128,8 +228,8 @@
 	pointer-events: painted;
 	&[class*='enter'] {
 		background: transparent;
-		&[class*='Active'],
-		&[class*='Done'] {
+		&[class*='-active'],
+		&[class*='-done'] {
 			background-color: rgba(32, 32, 32, 0.6);
 			backdrop-filter: blur(10px) saturate(2);
 			transition: background 0.4s ease, backdrop-filter 0.4s ease;
@@ -138,8 +238,8 @@
 	&[class*='exit'] {
 		background-color: rgba(32, 32, 32, 0.6);
 		backdrop-filter: blur(10px) saturate(2);
-		&[class*='Active'],
-		&[class*='Done'] {
+		&[class*='-active'],
+		&[class*='-done'] {
 			background: transparent;
 			backdrop-filter: blur(0px) saturate(1);
 			transition: background 0.4s ease, backdrop-filter 0.4s ease;
@@ -150,7 +250,7 @@
 // styling
 @mixin divider($size: 'md') {
 	&:not(:first-child) {
-		border-top: 1px solid var(--gray-color-dim);
+		border-top: 1px solid var(--color-gray-200);
 	}
 
 	@if ($size == 'md') {
