@@ -7,6 +7,7 @@ import '@/assets/styles/base/_layout.scss';
 import '@/assets/styles/utils/_transition.scss';
 import '@/assets/styles/base/tailwind.css';
 import Router from './router';
+import Wrapper from './Wrapper';
 
 // Service Worker 등록
 const updateSW = registerSW({
@@ -24,6 +25,8 @@ const updateSW = registerSW({
 
 createRoot(document.getElementById('root')!).render(
 	<HelmetProvider>
-		<Router />
+		<Wrapper>
+			<Router />
+		</Wrapper>
 	</HelmetProvider>
 );

@@ -1,18 +1,16 @@
 import {
-	IconFeedFilled,
-	IconFeedOutlined,
-	IconHeartFilled,
-	IconHeartOutlined,
 	IconHomeFilled,
 	IconHomeOutlined,
 	IconPersonFilled,
 	IconPersonOutlined,
-	IconSearchFilled,
-	IconSearchOutlined
+	IconStarFilled,
+	IconStarOutlined,
+	IconTalkFilled,
+	IconTalkOutlined
 } from '../../common/Icon';
 
 import AppBar from '../../common/AppBar/AppBar';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styles from './TabBar.module.scss';
 
 export default function TabBar() {
@@ -20,41 +18,33 @@ export default function TabBar() {
 
 	const TabBarProps = [
 		{
-			label: 'explorer',
-			href: '/explorer',
-			icons: {
-				normal: <IconSearchOutlined size="fill" />,
-				activated: <IconSearchFilled size="fill" />
-			}
-		},
-		{
-			label: 'about',
-			href: '/about',
-			icons: {
-				normal: <IconFeedOutlined size="fill" />,
-				activated: <IconFeedFilled size="fill" />
-			}
-		},
-		{
-			label: 'home',
+			label: '홈',
 			href: '/',
-			end: true,
+			exact: true,
 			icons: {
 				normal: <IconHomeOutlined size="fill" />,
 				activated: <IconHomeFilled size="fill" />
 			}
 		},
 		{
-			label: 'detail',
-			href: '/detail/1',
+			label: '파티',
+			href: '/party',
 			icons: {
-				normal: <IconHeartOutlined size="fill" />,
-				activated: <IconHeartFilled size="fill" />
+				normal: <IconStarOutlined size="fill" />,
+				activated: <IconStarFilled size="fill" />
 			}
 		},
 		{
-			label: 'guide',
-			href: '/guide/common/component',
+			label: '채팅',
+			href: '/chat',
+			icons: {
+				normal: <IconTalkOutlined size="fill" />,
+				activated: <IconTalkFilled size="fill" />
+			}
+		},
+		{
+			label: '마이',
+			href: '/my',
 			icons: {
 				normal: <IconPersonOutlined size="fill" />,
 				activated: <IconPersonFilled size="fill" />
@@ -68,14 +58,18 @@ export default function TabBar() {
 				<ul className={styles.container}>
 					{TabBarProps.map((prop, i) => (
 						<li key={i}>
-							<NavLink className={styles.link} to={prop.href}>
-								<div className={styles.iconButton}>
-									{pathname.includes(prop.href)
+							<Link className={styles.link} to={prop.href}>
+								<div className={styles.iconWrap}>
+									{prop.exact
+										? pathname == prop.href
+											? prop.icons.activated
+											: prop.icons.normal
+										: pathname.startsWith(prop.href)
 										? prop.icons.activated
 										: prop.icons.normal}
 								</div>
 								<span className={styles.label}>{prop.label.toUpperCase()}</span>
-							</NavLink>
+							</Link>
 						</li>
 					))}
 				</ul>

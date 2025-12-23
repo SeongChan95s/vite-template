@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 
 export default function HomePage() {
 	return (
@@ -12,6 +13,7 @@ export default function HomePage() {
 					<div className="flex items-center">
 						<h2 className="text-headline-1">홈 페이지</h2>
 					</div>
+					<Link to="/guide/common/component">가이드</Link>
 				</main>
 			</div>
 		</>

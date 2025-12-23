@@ -4,7 +4,6 @@ import NotFoundPage from './pages/NotFoundPage';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import GuideLayout from './layouts/GuideLayout';
 import MainLayout from './layouts/MainLayout';
-import Wrapper from './Wrapper';
 import ComponentGuidePage from './pages/guide/common/ComponentGuidePage';
 import PopupGuidePage from './pages/guide/common/PopupGuidePage';
 import GlobalPopupGuidePage from './pages/guide/global/GlobalPopupGuidePage';
@@ -14,56 +13,52 @@ import SubLayout from './layouts/SubLayout';
 
 const router = createBrowserRouter([
 	{
-		element: <Wrapper />,
+		element: <MainLayout />,
 		children: [
 			{
-				element: <MainLayout />,
-				children: [
-					{
-						path: '/',
-						element: <HomePage />
-					},
-					{
-						path: '/about',
-						element: <AboutPage />
-					}
-				]
+				path: '/',
+				element: <HomePage />
 			},
 			{
-				element: <SubLayout />,
-				children: [
-					{
-						path: '/detail/:id',
-						element: <DetailPage />
-					}
-				]
-			},
-			{
-				element: <GuideLayout />,
-				children: [
-					{
-						path: '/guide/common/component',
-						element: <ComponentGuidePage />
-					},
-					{
-						path: '/guide/common/popup',
-						element: <PopupGuidePage />
-					},
-					{
-						path: '/guide/common/sheet',
-						element: <SheetGuidePage />
-					},
-					{
-						path: '/guide/global/popup',
-						element: <GlobalPopupGuidePage />
-					}
-				]
-			},
-			{
-				path: '*',
-				element: <NotFoundPage />
+				path: '/about',
+				element: <AboutPage />
 			}
 		]
+	},
+	{
+		element: <SubLayout />,
+		children: [
+			{
+				path: '/detail/:id',
+				element: <DetailPage />
+			}
+		]
+	},
+	{
+		element: <GuideLayout />,
+		path: '/guide',
+		children: [
+			{
+				path: 'common/component',
+				element: <ComponentGuidePage />
+			},
+			{
+				path: 'common/popup',
+				element: <PopupGuidePage />
+			},
+			{
+				path: 'common/sheet',
+				element: <SheetGuidePage />
+			},
+			{
+				path: 'global/popup',
+				element: <GlobalPopupGuidePage />
+			}
+		]
+	},
+	{
+		path: '*',
+		element: <NotFoundPage />
 	}
 ]);
 
