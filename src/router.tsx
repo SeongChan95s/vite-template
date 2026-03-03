@@ -8,7 +8,7 @@ import ComponentGuidePage from './pages/guide/common/ComponentGuidePage';
 import PopupGuidePage from './pages/guide/common/PopupGuidePage';
 import GlobalPopupGuidePage from './pages/guide/global/GlobalPopupGuidePage';
 import SheetGuidePage from './pages/guide/common/SheetGuidePage';
-import DetailPage from './pages/detail/DetailPage';
+import PostDetailPage from './pages/post/detail';
 import SubLayout from './layouts/SubLayout';
 
 const router = createBrowserRouter([
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: '/detail/:id',
-				element: <DetailPage />
+				element: <PostDetailPage />
 			}
 		]
 	},

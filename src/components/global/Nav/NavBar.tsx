@@ -85,7 +85,7 @@ function useNavPath() {
 					);
 					const currentTitle = document.title;
 					if (result?.props?.title)
-						result.props.title = currentTitle.replace('파티 스케줄러 :', '');
+						result.props.title = currentTitle.replace('모요 :', '');
 
 					return result ? { ...result } : undefined;
 				});
@@ -140,7 +140,7 @@ export default function NavBar() {
 							<IconButton
 								className={styles.backButton}
 								icon={<IconArrowStick />}
-								size="lg"
+								size="md"
 								onClick={() => navigate(-1)}
 							/>
 						)}
